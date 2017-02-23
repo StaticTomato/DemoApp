@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Barcode Scanner</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3>Barcode Scanner example</h3>
+
+  <div padding *ngIf="!result">
+    <p>Scan a barcode to get started</p>
+  </div>
+
+  <div *ngIf="result">
+    <ion-grid>
+      <ion-row>
+        <ion-col><b>Text:</b></ion-col><ion-col>{{ result.text }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Format:</b></ion-col><ion-col>{{ result.format }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Cancelled:</b></ion-col><ion-col>{{ result.cancelled }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div padding>
+    <button ion-button (click)="doScan()" >Scan</button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Firebase</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of items | async">
+      <ion-thumbnail item-left>
+        <ion-img cache=true [src]="defaultImgURL"></ion-img>
+      </ion-thumbnail>
+      <ion-card-title>
+        {{item.name}}
+      </ion-card-title>
+      <p>
+        {{item.description}}
+      </p>
+      <button ion-button (click)="editItem(item)">
+        <ion-icon name='create'></ion-icon>
+      </button>
+      <button ion-button (click)="deleteItem(item.$key)">
+        <ion-icon name='trash'></ion-icon>
+      </button>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

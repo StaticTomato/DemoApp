@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Geolocation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Geolocation example</h3>
+
+  <p>
+    <b>(North = 0&deg;)</b>
+  </p>
+
+  <div *ngIf="coords">
+    <ion-grid>
+      <ion-row>
+        <ion-col><b>Timestamp:</b></ion-col><ion-col>{{ timestamp }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Latitude:</b></ion-col><ion-col>{{ coords.latitude }}&deg;</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Longitude:</b></ion-col><ion-col>{{ coords.longitude }}&deg;</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Lat/Long accuracy:</b></ion-col><ion-col>{{ coords.accuracy }}m</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Altitude:</b></ion-col><ion-col>{{ coords.altitude }}m</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Altitude accuracy:</b></ion-col><ion-col>{{ coords.altitudeAccuracy }}m</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Heading:</b></ion-col><ion-col>{{ coords.heading }}&deg;</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><b>Speed:</b></ion-col><ion-col>{{ coords.speed }}m/s</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>NFC</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h3>NFC example</h3>
+
+  <div padding *ngIf="!tag">
+    <p>Scan a tag to get started</p>
+  </div>
+
+  <div padding *ngIf="tag">
+    <p>{{tag}}</p>
+  </div>
+
+  <div padding *ngIf="ndefMessage">
+    <p><b>NdefMessage:</b> {{ndefMessage}}</p>
+  </div>
+
+  <div padding>
+    <ion-item>
+      <ion-label floating>Text</ion-label>
+      <ion-input #text></ion-input>
+    </ion-item>
+    <button ion-button (click)="writeTextToNdefTag(text.value)" >Write</button>
+  </div>
+
+  <div padding>
+    <ion-item>
+      <ion-label floating>URL</ion-label>
+      <ion-input #url></ion-input>
+    </ion-item>
+    <button ion-button (click)="writeURLToNdefTag(url.value)" >Write</button>
+  </div>
+
+</ion-content>
